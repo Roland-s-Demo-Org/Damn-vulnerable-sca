@@ -8,7 +8,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.13.RELEASE</version>
-		<relativePath />
+		<relativePath/>
 	</parent>
 
 	<groupId>com.acme.foo</groupId>
@@ -17,13 +17,31 @@
 	<packaging>jar</packaging>
 
 	<name>REST API</name>
-	<description></description>
+	<description/>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<org-apache-tomcat-embed.tomcat-embed-core.version>9.0.108</org-apache-tomcat-embed.tomcat-embed-core.version>
+		<org-springframework-boot.spring-boot-starter-web.version>2.5.12</org-springframework-boot.spring-boot-starter-web.version>
+		<org-springframework.spring-core.version>5.3.41</org-springframework.spring-core.version>
+		<org-springframework.spring-webmvc.version>5.3.44</org-springframework.spring-webmvc.version>
+		<org-springframework.spring-web.version>5.3.41</org-springframework.spring-web.version>
+		<org-springframework.spring-beans.version>5.3.41</org-springframework.spring-beans.version>
+		<org-springframework.spring-expression.version>5.3.41</org-springframework.spring-expression.version>
+		<org-springframework.spring-context.version>5.3.41</org-springframework.spring-context.version>
+		<com-fasterxml-jackson-core.jackson-databind.version>2.12.7.1</com-fasterxml-jackson-core.jackson-databind.version>
+		<org-yaml.snakeyaml.version>1.32</org-yaml.snakeyaml.version>
+		<org-apache-logging-log4j.log4j-core.version>2.12.4</org-apache-logging-log4j.log4j-core.version>
+		<org-springframework-boot.spring-boot.version>2.2.11.RELEASE</org-springframework-boot.spring-boot.version>
+		<com-fasterxml-jackson-core.jackson-core.version>2.15.0</com-fasterxml-jackson-core.jackson-core.version>
+		<org-hibernate-validator.hibernate-validator.version>6.2.0.Final</org-hibernate-validator.hibernate-validator.version>
+		<org-springframework.spring-messaging.version>5.2.22.RELEASE</org-springframework.spring-messaging.version>
+		<org-apache-tomcat-embed.tomcat-embed-websocket.version>9.0.86</org-apache-tomcat-embed.tomcat-embed-websocket.version>
+		<org-springframework-boot.spring-boot-autoconfigure.version>2.5.15</org-springframework-boot.spring-boot-autoconfigure.version>
+		<org-springframework.spring-websocket.version>5.3.41</org-springframework.spring-websocket.version>
 	</properties>
 
 	<dependencies>
@@ -158,4 +176,108 @@
 			</plugin>
 		</plugins>
 	</build>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.tomcat.embed</groupId>
+				<artifactId>tomcat-embed-core</artifactId>
+				<version>${org-apache-tomcat-embed.tomcat-embed-core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-starter-web</artifactId>
+				<version>${org-springframework-boot.spring-boot-starter-web.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${org-springframework.spring-core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${org-springframework.spring-webmvc.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${org-springframework.spring-web.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${org-springframework.spring-beans.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-expression</artifactId>
+				<version>${org-springframework.spring-expression.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${org-springframework.spring-context.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${com-fasterxml-jackson-core.jackson-databind.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.yaml</groupId>
+				<artifactId>snakeyaml</artifactId>
+				<version>${org-yaml.snakeyaml.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${org-apache-logging-log4j.log4j-core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${org-springframework.spring-webmvc.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot</artifactId>
+				<version>${org-springframework-boot.spring-boot.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>${com-fasterxml-jackson-core.jackson-core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate.validator</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>${org-hibernate-validator.hibernate-validator.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-messaging</artifactId>
+				<version>${org-springframework.spring-messaging.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.tomcat.embed</groupId>
+				<artifactId>tomcat-embed-websocket</artifactId>
+				<version>${org-apache-tomcat-embed.tomcat-embed-websocket.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-autoconfigure</artifactId>
+				<version>${org-springframework-boot.spring-boot-autoconfigure.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${org-springframework.spring-core.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-websocket</artifactId>
+				<version>${org-springframework.spring-websocket.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
