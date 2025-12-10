@@ -8,7 +8,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.13.RELEASE</version>
-		<relativePath />
+		<relativePath/>
 	</parent>
 
 	<groupId>com.acme.foo</groupId>
@@ -17,13 +17,14 @@
 	<packaging>jar</packaging>
 
 	<name>REST API</name>
-	<description></description>
+	<description/>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<org-apache-logging-log4j.log4j-core.version>2.12.4</org-apache-logging-log4j.log4j-core.version>
 	</properties>
 
 	<dependencies>
@@ -158,4 +159,13 @@
 			</plugin>
 		</plugins>
 	</build>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.apache.logging.log4j</groupId>
+				<artifactId>log4j-core</artifactId>
+				<version>${org-apache-logging-log4j.log4j-core.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
