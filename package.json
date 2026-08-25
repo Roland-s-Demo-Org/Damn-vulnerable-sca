@@ -17,6 +17,7 @@
     "fetch": "^1.1.0",
     "font-awesome": "^4.7.0",
     "handlebars": "4.0.14",
+    "helmet": "8.3.0",
     "ip": "^1.1.8",
     "lodash": "4.17.11",
     "marked": "^0.3.5",

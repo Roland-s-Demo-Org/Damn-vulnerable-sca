@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const ip = require('ip');
 const http = require('http');
 const express = require('express');
+const helmet = require('helmet');
 const path = require('path');
 const { exec } = require('child_process');
 const pug = require('pug');
@@ -17,6 +18,7 @@ import('trim-newlines').then((module) => {
 });
 
 const app = express();
+app.use(helmet());
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
 app.use(express.json({ limit: '10mb' }));
 app.use('/static', express.static(path.join(__dirname, 'static')));
