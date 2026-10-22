@@ -664,6 +664,28 @@ app.get('/checkip', function(req, res) {
     `);
 });
 
+function buildValidatedUrl(baseUrl) {
+  try {
+    if (baseUrl.includes('/../') || /\/%2e%2e\//i.test(baseUrl)) {
+      throw new Error('Invalid path');
+    }
+    const url = new URL(baseUrl);
+    const allowedDomains = ['example.com']; // add your allowed domains here
+    if (!allowedDomains.includes(url.hostname)) {
+      throw new Error('Invalid host');
+    }
+    if (!['http:', 'https:'].includes(url.protocol)) {
+      throw new Error('Invalid protocol');
+    }
+    // Append the fixed file name, preserving the original concatenation behavior
+    const basePath = baseUrl.endsWith('/') ? url.pathname : url.pathname.replace(/\/$/, '');
+    url.pathname = basePath + '/index.html';
+    return url.href;
+  } catch {
+    throw new Error('Invalid URL');
+  }
+}
+
 // Handling POST request to process the form submission
 app.post('/checkip', function (req, res) {
     var my_ip = req.body.ip;
@@ -687,7 +709,7 @@ app.post('/checkip', function (req, res) {
                 
                 console.log(`Fetching from URL: ${url}`);
                 
-                fetch(url + "/index.html")
+                fetch(buildValidatedUrl(url))
                     .then(response => {
                         console.log(`Response status: ${response.status}`);
                         return response.text();
